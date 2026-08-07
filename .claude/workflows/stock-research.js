@@ -9,13 +9,15 @@ export const meta = {
   ],
 }
 
-const PROJECT_ROOT = '/var/www/docker/html/ks-devworks/stocks'
-
 let a = args
 if (typeof a === 'string') {
   try { a = JSON.parse(a) } catch (e) { a = {} }
 }
 a = a || {}
+
+// 專案根目錄：預設為使用者本機路徑，但允許呼叫端用 args.project_root 覆寫，
+// 這樣在雲端/web session（路徑不同，例如 /home/user/stocks）也能正確寫入研究筆記。
+const PROJECT_ROOT = a.project_root || '/var/www/docker/html/ks-devworks/stocks'
 
 const target = a.target
 if (!target) {
