@@ -72,6 +72,7 @@ Workflow({
     target: '日圓期貨（CME 6J / USD-JPY）',   // 標的名稱，必填
     slug: 'jpy-futures',                      // 檔名 slug，選填（沒給會從target自動產生）
     run_date: '2026-08-04',                   // 研究基準日期，建議每次都給，因為腳本本身無法取得目前日期
+    project_root: '/var/www/docker/html/...', // 專案根目錄絕對路徑，一定要傳，見下方注意事項
     focus_questions: ['...'],                 // 使用者特別想知道的問題，選填
   }
 })
@@ -79,6 +80,13 @@ Workflow({
 
 注意事項：
 - `run_date` 一定要傳，因為 Workflow 腳本內不能呼叫 `Date.now()`，日期要由呼叫端（也就是這次對話當下的日期）帶進去。
+- `project_root` 也一定要傳，理由同上：Workflow 沙箱裡沒有檔案系統／Node API，腳本拿不到 cwd，
+  只能靠呼叫端把絕對路徑帶進去。**呼叫前先跑 `git rev-parse --show-toplevel` 取得當下真實路徑再帶入**，
+  不要沿用上面範例或腳本裡的硬編預設值。
+  漏傳的後果是靜默壞掉、不會報錯：腳本會退回 `.claude/workflows/stock-research.js` 裡的硬編預設路徑，
+  而 Synthesize 階段的 `Write` 會自動建父目錄，於是研究筆記被寫進一棵憑空長出來的目錄樹，
+  不進 repo、`git status` 也看不到，要等發現筆記不見了才會察覺。
+  （預設值目前寫的是 `ks-devworks`，但實際目錄在改名前是 `kx-devworks`，所以現階段漏傳一定會踩到。）
 - 這個工具的 `args` 參數偶爾會被當成字串而不是物件傳進腳本（已知的呼叫介面問題），腳本內已加上防呆
   （會先判斷是不是字串、是的話再 `JSON.parse`），呼叫時仍應盡量把 `args` 當成真正的 JSON 物件傳入。
 - 已實測跑過三次（日圓期貨x2、台指期），驗證階段確實能抓出 agy 的錯誤（例如查錯 FOMC 日期、干預金額換算出錯、
