@@ -93,3 +93,14 @@ Workflow({
   合約規格數字有誤等），比單純只用 agy 或只用 WebSearch 更可靠，值得每次研究新標的都用這個流程跑一次。
 - 技術面角度會明確要求 RSI、MACD、布林通道、成交量趨勢四項指標（結果放在 `technical_indicators` 欄位），
   不是只給支撐/阻力價位。
+
+## 方法論與教訓（`research/methodology.md`）
+
+`research/methodology.md` 彙整了四個分析角度（總體/政策面、技術面/價位、新聞/催化事件、籌碼/資金流向）
+上網查證過的專業方法論與常見陷阱，以及過去多次研究歸納出的專案自身教訓（agy 反覆犯的錯誤類型、
+WebSearch 蒐集階段的侷限、進場策略的判準、初判斷錯了後來修正的案例）。這些教訓已於 2026-08-11
+落地到 `stock-research.js` 四個角度的 prompt 與 Verify 階段的 prompt 裡（各角度加入對應陷阱檢查、
+Verify 階段加入 agy 已知錯誤類型檢查清單）。
+
+之後每次研究若又發現新的教訓或方法論調整，應回來更新 `research/methodology.md`，
+並視情況同步調整 `stock-research.js` 的提示詞，讓判斷品質持續累積、不要每次從零開始。
