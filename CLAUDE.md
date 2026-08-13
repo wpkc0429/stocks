@@ -93,3 +93,32 @@ Workflow({
   合約規格數字有誤等），比單純只用 agy 或只用 WebSearch 更可靠，值得每次研究新標的都用這個流程跑一次。
 - 技術面角度會明確要求 RSI、MACD、布林通道、成交量趨勢四項指標（結果放在 `technical_indicators` 欄位），
   不是只給支撐/阻力價位。
+
+## 方法論與教訓（`research/methodology.md`）
+
+`research/methodology.md` 彙整了四個分析角度（總體/政策面、技術面/價位、新聞/催化事件、籌碼/資金流向）
+上網查證過的專業方法論與常見陷阱，以及過去多次研究歸納出的專案自身教訓（agy 反覆犯的錯誤類型、
+WebSearch 蒐集階段的侷限、進場策略的判準、初判斷錯了後來修正的案例）。這些教訓已於 2026-08-11
+落地到 `stock-research.js` 四個角度的 prompt 與 Verify 階段的 prompt 裡（各角度加入對應陷阱檢查、
+Verify 階段加入 agy 已知錯誤類型檢查清單）。
+
+之後每次研究若又發現新的教訓或方法論調整，應回來更新 `research/methodology.md`，
+並視情況同步調整 `stock-research.js` 的提示詞，讓判斷品質持續累積、不要每次從零開始。
+
+## 投資指南方法論知識庫（`research/book/`）
+
+`research/book/` 是比 `methodology.md` 範圍更廣的方法論彙整（18份章節，見該資料夾的 `README.md`），
+涵蓋風險管理與部位大小、行為金融學、市場微結構、資產類別特性、回測驗證、歷史市場教訓等
+`methodology.md` 沒收錄的支柱。2026-08-11 已把其中跟「單一標的即時研究」直接相關的幾條，
+落地進 `stock-research.js`：
+- 技術面角度加入「高波動資產（如加密貨幣）RSI/布林通道門檻要放寬，不要套用股票的標準閾值」
+  （依 `research/book/07-asset-class-characteristics.md`）。
+- Synthesize 階段的「進場策略框架」新增下結論前的自我檢查清單（四角度是否互相印證、現價是否卡在
+  支撐阻力中段、重大事件是否在1-2天內、停損是否依結構/ATR而非動能指標翻轉設定、槓桿商品是否已提醒
+  換算清算價、避免建議攤平式加碼、下結論前檢查是否有確認偏誤）（依 `research/book/01-risk-management-position-sizing.md`
+  與 `research/book/16-building-your-own-system.md` 的 checklist 邏輯）。
+- 新增「風險管理備註」小節，每份研究筆記都要附一個簡短的部位規模試算範例（示範用，非資金建議）。
+
+`research/book/` 裡其他跟這個 workflow 關聯較弱的章節（退休規劃、台灣稅務、選擇權、房地產/REITs、
+績效指標等）目前沒有對應落地進 `stock-research.js`，因為這個 workflow 是做「單一標的近期進出場判斷」，
+不是這些章節處理的資產配置/人生規劃層次的問題；除非之後有新需求，否則不用勉強塞進去。
