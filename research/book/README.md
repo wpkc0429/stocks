@@ -23,28 +23,29 @@
 
 ### 第二部：分析方法論
 7. 基本面分析（估值方法、財報紅旗、護城河、價值陷阱）→ [`04-fundamental-analysis.md`](./04-fundamental-analysis.md)
-8–11. 總體/政策面、技術面/價位、新聞/催化事件、籌碼/資金流向 → 見 [`research/methodology.md`](../methodology.md)（本專案 `stock-research` workflow 的核心方法論，已實戰驗證於8次標的研究）
-12. AI輔助研究（agy）的可靠性教訓與交叉驗證方法 → 見 [`research/methodology.md`](../methodology.md) 下半部
+8. 投資策略總覽（價值/成長/品質/GARP/股息/多因子等長線選股風格、動能/反轉/利差交易/全球總體/產業輪動、配對交易/選擇權收益/系統化量化/市場中性/算法交易，共16種策略的判準、實證與風險）→ [`18-investment-strategies-taxonomy.md`](./18-investment-strategies-taxonomy.md)
+9–12. 總體/政策面、技術面/價位、新聞/催化事件、籌碼/資金流向 → 見 [`research/methodology.md`](../methodology.md)（本專案 `stock-research` workflow 的核心方法論，已實戰驗證於8次標的研究）
+13. AI輔助研究（agy）的可靠性教訓與交叉驗證方法 → 見 [`research/methodology.md`](../methodology.md) 下半部
 
 ### 第三部：建構投資組合
-13. 債券與固定收益投資基礎（票息/YTM/存續期間、殖利率與價格反向、信用利差、殖利率曲線倒掛、散戶常見陷阱）→ [`17-bonds-fixed-income-basics.md`](./17-bonds-fixed-income-basics.md)
-14. 資產配置與投資組合建構（MPT侷限、60/40、全天候、風險平價、再平衡）→ [`02-portfolio-construction.md`](./02-portfolio-construction.md)
-15. 定期定額 vs 一次投入（LSI平均勝率65-90%、DCA的心理價值、**含台灣0050本土回測**）→ [`14-dca-vs-lump-sum.md`](./14-dca-vs-lump-sum.md)
-16. 房地產與REITs（配息規定、與股市相關性、升息敏感度、**含台灣REITs市場現況**）→ [`15-real-estate-reits.md`](./15-real-estate-reits.md)
+14. 債券與固定收益投資基礎（票息/YTM/存續期間、殖利率與價格反向、信用利差、殖利率曲線倒掛、散戶常見陷阱）→ [`17-bonds-fixed-income-basics.md`](./17-bonds-fixed-income-basics.md)
+15. 資產配置與投資組合建構（MPT侷限、60/40、全天候、風險平價、再平衡）→ [`02-portfolio-construction.md`](./02-portfolio-construction.md)
+16. 定期定額 vs 一次投入（LSI平均勝率65-90%、DCA的心理價值、**含台灣0050本土回測**）→ [`14-dca-vs-lump-sum.md`](./14-dca-vs-lump-sum.md)
+17. 房地產與REITs（配息規定、與股市相關性、升息敏感度、**含台灣REITs市場現況**）→ [`15-real-estate-reits.md`](./15-real-estate-reits.md)
 
 ### 第四部：驗證與衡量
-17. 回測與策略驗證方法論（過度擬合、存活者偏誤、前視偏誤、前推分析）→ [`05-backtesting-validation.md`](./05-backtesting-validation.md)
-18. 投資組合績效評估的量化指標（夏普/索提諾/卡瑪比率、最大回撤）→ [`11-risk-adjusted-performance-metrics.md`](./11-risk-adjusted-performance-metrics.md)
+18. 回測與策略驗證方法論（過度擬合、存活者偏誤、前視偏誤、前推分析）→ [`05-backtesting-validation.md`](./05-backtesting-validation.md)
+19. 投資組合績效評估的量化指標（夏普/索提諾/卡瑪比率、最大回撤）→ [`11-risk-adjusted-performance-metrics.md`](./11-risk-adjusted-performance-metrics.md)
 
 ### 第五部：歷史教訓
-19. 歷史重大市場事件與投資教訓（2008海嘯、網路泡沫、LTCM、Terra/FTX）→ [`08-historical-lessons.md`](./08-historical-lessons.md)
+20. 歷史重大市場事件與投資教訓（2008海嘯、網路泡沫、LTCM、Terra/FTX）→ [`08-historical-lessons.md`](./08-historical-lessons.md)
 
 ### 第六部：人生階段規劃
-20. 退休規劃與資產提領策略（4%法則、序列報酬風險、動態提領、**含台灣勞退新制/勞保給付**）→ [`13-retirement-withdrawal-strategy.md`](./13-retirement-withdrawal-strategy.md)
-21. 台灣證券與期貨交易稅務與法規 → [`12-taiwan-tax-regulation.md`](./12-taiwan-tax-regulation.md)
+21. 退休規劃與資產提領策略（4%法則、序列報酬風險、動態提領、**含台灣勞退新制/勞保給付**）→ [`13-retirement-withdrawal-strategy.md`](./13-retirement-withdrawal-strategy.md)
+22. 台灣證券與期貨交易稅務與法規 → [`12-taiwan-tax-regulation.md`](./12-taiwan-tax-regulation.md)
 
 ### 第七部：打造屬於自己的方法論
-22. 整合前面所有章節、依個人風險承受度與時間投入選擇組合，附實作工具（部位規模計算範例、交易日誌範本、進出場決策checklist）→ [`16-building-your-own-system.md`](./16-building-your-own-system.md)
+23. 整合前面所有章節、依個人風險承受度與時間投入選擇組合，附實作工具（部位規模計算範例、交易日誌範本、進出場決策checklist）→ [`16-building-your-own-system.md`](./16-building-your-own-system.md)
 
 ## 已完成的品質把關（共五輪）
 
@@ -61,6 +62,7 @@
    - **一個實質缺口**：《資產配置與投資組合建構》（60/40、風險平價）與《退休規劃與資產提領策略》（股債配置隨年齡調整）長期引用「股債配置」「公債殖利率」等概念，但全書此前完全沒解釋債券基礎機制——這不是選配主題，是這兩章論述所需的地基，之前五輪都沒發現。**已補上** [`17-bonds-fixed-income-basics.md`](./17-bonds-fixed-income-basics.md)，涵蓋票面利率/YTM/存續期間、殖利率與價格反向關係（並補充「資產配置」章「2022年股債同跌」的機制成因）、投資等級vs高收益債的信用利差、殖利率曲線倒掛及其2022–2023年的爭議（倒掛後衰退遲遲未至）、直接持有債券vs債券ETF的常見陷阱，每項皆有來源（FINRA、Fidelity、iShares、PIMCO、Schwab、CNBC、CAIA、IMF、Stanford GSB等），並在相關章節加註交叉引用。
    - **一個標籤瑕疵**：收斂章節內部分「第X章」引用因應中途插入新章節而編號錯位（例如把檔案01稱為「第一章」又稱為「第三章」，實質是同一份研究，只是引用時筆誤），與內容正確性無關，但顯示先前的「已完成交叉驗證」宣稱在細節上仍有沒抓到的小疵。**已修正**：收斂章節與各章之間的交叉引用全面改為「篇名＋檔名連結」，不再使用會隨新章節插入而過時的數字編號；並抓出、修正了README自身兩處「第十九章」誤植（應為退休規劃章）。
    審稿的結論原文：「以動筆寫初稿的標準而言，除了債券缺口之外，其餘14份章節的素材完整、來源可信、內部一致，作者可以直接開始動筆」——債券缺口已在本輪補上。
+7. **新增第18章「投資策略總覽」（2026-08-14）**：起因是使用者詢問本專案 `stock-research` workflow 的四角度判讀方法算不算「動能投資」，發現全書之前沒有一份系統性彙整市場上實際存在的投資/交易策略流派（第九章只整理四本經典書的心得、不是策略分類）。用三個平行研究代理人分別查證長線選股風格（價值/成長/品質/GARP/股息/多因子）、動能反轉與總體型策略（動能順勢/反轉逆勢/利差交易/全球總體/產業輪動）、市場中性與量化/選擇權收益策略（配對交易/選擇權收益/系統化量化/市場中性/算法交易），共16種策略，來源以CFA Institute、AQR、BIS、Fama-French原始論文、Morningstar、MSCI、SSRN學術論文為主。**這一章只經過一輪研究、尚未走完前六輪的跨章節交叉驗證與獨立對抗性審稿流程**，內容數字皆附來源，但幾處來源本身互相矛盾或證據薄弱之處已誠實標註（見該章「查證侷限誠實揭露」小節），不計入下方信心水準評分的既有基礎。
 
 ## 信心水準自評
 
@@ -68,7 +70,7 @@
 
 這個數字對應的問題是「這批研究是否足夠支撐一個作者現在就開始動筆、寫出一本內容完整、來源可信、內部一致的投資指南初稿」——這是研究工作本身可以被驗證、被95%以上確定的問題。它**不等於**「這本書出版後永遠不用修訂」或「沒有任何真人用過裡面的工具」，那是另一個範疇的問題（見下方「不計入信心評分的項目」），任何一本已出版的投資書籍都無法對那個問題打100分，用那個標準來衡量「研究是否做完」本身就不是這次任務要驗證的目標。
 
-**支撐這個數字的具體證據**（六輪工作，非一次性宣稱）：
+**支撐這個數字的具體證據**（六輪工作，非一次性宣稱；**這個98%評分涵蓋的是原本18份章節，不含2026-08-14新增的第18章「投資策略總覽」——該章只做過一輪研究，尚未走完以下六輪流程，暫不計入此評分**）：
 1. 18份章節，涵蓋心態、行為金融、風險管理、市場機制、資產類別、選擇權、基本面、總體/技術/新聞/籌碼四角度、債券、資產配置、DCA、房地產、回測驗證、績效指標、歷史教訓、退休規劃、稅務、收斂實作——每一項都透過 WebSearch 多次查證、附可追溯來源（CFA Institute、Morningstar、Vanguard、Schwab、Fidelity、SEC/FINRA、Federal Reserve History、SSRN學術論文、台灣財政部/勞動部/金管會等）。
 2. 跨章節交叉驗證：讀過全部章節找矛盾，抓到並修正兩處措辭易誤讀之處。
 3. 台灣在地化：三個原本只有歐美數據的章節補上本土研究，且對其中最弱的引用另做一輪一手來源追查，誠實標註查證結果（含「查無更嚴謹來源」這種誠實的空手而回）。
