@@ -74,9 +74,9 @@
 ## 四、依個人情況選擇組合
 
 - **時間精力有限、不想主動管理**：以《[經典書籍架構參考](./09-classic-books-synthesis.md)》Malkiel 的建議為主——低成本指數化投資為核心，搭配《[資產配置與投資組合建構](./02-portfolio-construction.md)》的資產配置與再平衡紀律，《[定期定額 vs 一次投入](./14-dca-vs-lump-sum.md)》建議：有一次性大筆資金時考慮分3-6個月投入，平時定期定額則持續執行。
-- **想主動選股**：加上《[基本面分析](./04-fundamental-analysis.md)》框架，用安全邊際（Graham）與護城河概念篩選標的，並用 [methodology.md](../methodology.md) 的四角度方法論交叉驗證進場時機。
-- **想做波段/技術面交易**：以 [methodology.md](../methodology.md) 技術面章節與《[市場微結構與交易執行](./06-market-microstructure-execution.md)》為主，嚴格套用本章的部位規模公式與停損紀律（Livermore：小虧是便宜的保險）。
-- **任何組合都適用**：本章前段的 checklist、《[回測與策略驗證方法論](./05-backtesting-validation.md)》（若要系統化交易）、《[歷史重大市場事件與投資教訓](./08-historical-lessons.md)》（警惕槓桿與流動性錯配）。
+- **想主動選股**：加上《[基本面分析](./04-fundamental-analysis.md)》框架，用安全邊際（Graham）與護城河概念篩選標的，並用 [methodology.md](../methodology.md) 的四角度方法論交叉驗證進場時機。想進一步決定「選股要靠哪一套具體流派」（價值/成長/品質/GARP/股息/多因子），見《[投資策略總覽](./18-investment-strategies-taxonomy.md)》第一部，每種流派都附上具體判準與適合對象。
+- **想做波段/技術面交易**：以 [methodology.md](../methodology.md) 技術面章節與《[市場微結構與交易執行](./06-market-microstructure-execution.md)》為主，嚴格套用本章的部位規模公式與停損紀律（Livermore：小虧是便宜的保險）。若想採動能/順勢邏輯（不等四角度全部印證、依技術面訊號即時判斷方向），見《[投資策略總覽](./18-investment-strategies-taxonomy.md)》第7節與 `stock-research.js` 的「動能策略觀點」小節——**但務必先讀該章第7節的動能崩盤(momentum crash)與whipsaw風險，這套框架用「更快反應」換「更高的假訊號風險」，跟本章 checklist 的保守精神取捨不同，讀者需自行判斷是否適合自己的風險偏好**。
+- **任何組合都適用**：本章前段的 checklist、《[回測與策略驗證方法論](./05-backtesting-validation.md)》（若要系統化交易）、《[歷史重大市場事件與投資教訓](./08-historical-lessons.md)》（警惕槓桿與流動性錯配）、《[投資策略總覽](./18-investment-strategies-taxonomy.md)》「五、十六種策略總表」（依時間軸、風險特性、散戶可行性快速比較16種策略，找出跟自己時間精力與風險承受度匹配的流派）。
 
 ## 五、真實案例：把 Checklist 套用在本專案的實戰研究上
 
