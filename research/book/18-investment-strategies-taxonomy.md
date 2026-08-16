@@ -10,6 +10,12 @@
 
 **版本記錄**：初稿（2026-08-14上午）只經過一輪研究。同日下午依序補做第二輪查證（缺口數字覆核）、台灣市場在地化研究、跨章節一致性檢查、更新第16章交叉引用，再委託一位不知道前面內容的獨立審稿人做最後一輪對抗性審稿——審稿抓到一個實質問題（本段文字曾在審稿執行**之前**就寫成過去式宣稱「流程已完成」，這本身就是本章自己在教讀者避免的「誇大確定性」錯誤）與三處小疏漏，均已於審稿後修正。至此走完與其他17章相同的六輪品質把關流程，詳見 [`README.md`](./README.md) 的品質把關紀錄。
 
+**2026-08-16 新增第17種策略**：使用者詢問本章16種策略是否涵蓋「追蹤特定人士持倉、跟著複製交易」這種做法，查證後確認原本16種確實沒有涵蓋，遂新增第四節「跟蹤持倉／複製交易策略」。**誠實揭露此次新增的查證強度低於前16種**：這是單一對話單輪WebSearch查證（含正反兩面證據與媒體宣稱vs同儕審查文獻的衝突比對），**沒有**走完前16種策略經歷的第二輪缺口覆核、獨立對抗性審稿等完整六輪流程，讀者應以此認知看待第17種策略小節的可信度層級——內容仍每項附來源，但未經過同等強度的交叉驗證把關。
+
+**2026-08-16 同日再新增第18種策略**：使用者接著問「還有什麼投資策略嗎」，比對HFR官方六大避險基金策略分類後確認「事件驅動（event-driven）」——併購套利、不良債權投資、特殊情境/分割上市——是本章完全缺席的一整個大類，遂新增第五節。查證強度與第17節相同層級（單輪WebSearch、正反證據並陳、誠實標註溯源強度較弱之處，例如台灣分割上市138件案例研究未能精確定位單一論文出處），同樣**未**經過第二輪覆核與獨立審稿，可信度層級低於原本16種策略，已在對應查證侷限段落逐項標註。
+
+**2026-08-16 同日第三次新增第19種策略**：使用者第三度問「還有其他投資策略嗎」，查證發現HFR「相對價值（relative value）」大類底下，除了已有的第12節配對交易（股票對股票）之外，還有可轉債套利、固定收益套利、波動率套利三支具體工具完全缺席，遂新增第六節。**這一輪明確先向使用者揭露「報酬遞減」的判斷**——這個缺口比第17、18節更偏機構/專業級，證據顯示可轉債套利調整供需失衡後異常報酬幾乎消失，且這正是LTCM 1998年崩盤操作的核心策略之一——並用AskUserQuestion讓使用者自己選擇是否要繼續擴充，使用者選擇補上。查證強度與第17、18節相同層級（單輪WebSearch），同樣**未**經過第二輪覆核與獨立審稿。**台灣在地化查證意外發現一個強訊號**：台灣2000年即引進可轉債資產交換（CBAS）機制，是本章三次新增策略的台灣在地化段落中對應機制最成熟的一項，但也發現台灣依信用風險分級（TCRI）限制可拆解CBAS的可轉債範圍，是本土市場結構特有的限制。
+
 ## 一、長線選股風格策略（Style Investing）
 
 ### 1. 價值投資（Value Investing）
@@ -179,9 +185,71 @@
 - **為何不是散戶可行策略**：共同定位、專屬硬體、微波/雷射通訊網路等基礎設施投入是機構級資本規模，散戶完全無法在延遲維度競爭。
 - **與第六章（市場微結構與交易執行）的關聯**：了解HFT存在，有助理解為何許多依賴極短線價格型態的技術訊號容易被更快的演算法提前反應、訊號失效或滑價侵蝕獲利——市場價格發現速度已被HFT大幅壓縮，單純技術面短線訊號的邊際優勢持續被侵蝕。
 
-## 四、台灣市場在地化對應
+## 四、跟蹤持倉／複製交易策略（Copycat / Guru Investing）
 
-以下是16種策略中，跟台灣市場有明確對應（或明確缺席）之處的第二輪在地化查證，比照本書第14/15/20章的既有寫法，來源以TWSE、TAIFEX、金管會、投信投顧公會、各大投信官網為主。
+### 17. 跟蹤持倉／複製交易
+
+核心邏輯：不自行判斷買賣理由，而是複製特定「被認為握有資訊優勢」的個人或機構已公開揭露的持倉/交易，賭對方的資訊或判斷力比自己強。依「被追蹤對象」可再細分四個子類型，證據品質差異很大，**不能混為一談**：
+
+**(a) 機構法人 13F 複製（Alpha Cloning）**：追蹤巴菲特、知名避險基金等機構每季 SEC Form 13F 申報，複製其「高信念倉位」。Cohen, Polk & Silli (2010) 發現經理人最大主動倉位（best ideas）確實跑贏其整體投資組合；Aiken et al. (2013) 發現複製頂尖經理人持股的「copycat funds」即使扣掉45天延遲仍有alpha。但也有研究直接指出「沒有證據顯示基於13F的跟單策略對長期投資人有任何好處」；一份宣稱「複製後年化風險調整報酬贏標普500達24.3%」的研究只挑事後表現最好的前四分位回測，屬於典型的look-ahead bias、非可事前執行的策略。來源：[Alpha Cloning - Quantpedia](https://quantpedia.com/strategies/alpha-cloning-following-13f-fillings)、[Outperforming the Market: Portfolio Cloning from 13F (SSRN)](https://papers.ssrn.com/sol3/Delivery.cfm/5399672.pdf?abstractid=5399672&mirid=1)
+
+**(b) 國會議員跟單（STOCK Act 揭露）**：追蹤美國國會議員依 STOCK Act 強制揭露的股票交易（Pelosi Tracker、Unusual Whales等平台，以及據此編製的 NANC/KRUZ ETF）。**媒體宣稱與同儕審查文獻結論明顯衝突，須誠實標註**：媒體常引用「Pelosi十年累積報酬816%、勝率87%」，但2013年《Journal of Politics》"Capitol Losses"分析2004–2008年國會交易，結論是「沒有選股能力的證據」；NBER論文"Capital in the Capitol"發現國會議員交易模式類似缺乏資訊優勢的散戶交易；一篇分析實際掛牌NANC/KRUZ的研究指出，儘管兩者名目年化報酬看起來不錯（NANC 27%、KRUZ 13%），但用夏普比率算風險調整後報酬並未顯著贏過大盤。來源：[Do senators and house members beat the market? (ScienceDirect)](https://www.sciencedirect.com/science/article/abs/pii/S0047272722000044)、[Capital in the Capitol (NBER)](https://www.nber.org/papers/w35041)、[NANC/KRUZ研究 (ScienceDirect)](https://www.sciencedirect.com/science/article/abs/pii/S0165176525001004)
+
+**(c) 公司內部人 Form 4 跟單**：四個子類型中學術證據相對最扎實的一支。分析1992–2020年Form 3/4申報，發現「內部人不賣的股票」在申報揭露後有顯著異常報酬（月CAPM alpha 39個基點，年化約4.7%）；重壓買進的內部人持股一年後跑贏重壓賣出者約7–8%，但預測力主要來自「非例行性、機會主義式」買進，例行性交易（如選擇權到期例行變現）沒有預測力。但另有研究發現真正資訊優勢發生在「交易當下」而非「申報公開日」，等公開後才進場的策略扣掉實際交易成本後「不具經濟意義」。來源：[Insider filings as trading signals (ScienceDirect)](https://www.sciencedirect.com/science/article/pii/S1544612324015435)、[Can You Profit by Following Corporate Insiders? (Larry Swedroe)](https://larryswedroe.substack.com/p/can-you-profit-by-following-corporate)
+
+**(d) 加密貨幣巨鯨錢包追蹤**：四個子類型中證據品質最弱的一支，幾乎沒有同儕審查研究支持，多為業界部落格內容。大額轉帳可能是避險、內部錢包搬移、交易所存提，不代表方向性看法；「巨鯨陷阱」——老練交易者故意用假買牆/轉帳製造訊號，誘使跟單者進場後反手出貨；排行榜倖存者偏誤，爆倉消失的巨鯨不會出現在排行榜上；2025年一份調查顯示加密貨幣新手交易者第一年虧損率高達84%。來源：[Whale Copy-Trading: Visible Doesn't Mean Repeatable (Bitsgap)](https://bitsgap.com/blog/why-copying-on-chain-whale-trades-usually-backfires)、[Follow the Whales (FinanceFeeds)](https://financefeeds.com/follow-the-whales-smart-strategy-or-risky-move/)
+
+**四個子類型共通的結構性弱點**：
+- **揭露延遲**：13F、STOCK Act皆為法定45天延遲，等資料公開時，理論上的資訊優勢多半已被市場提前消化——這是本策略類別最致命的共通問題，也是與其他16種策略最本質的差異：其他策略靠自己分析公開資訊，這一類靠「別人本來就有的資訊優勢」，但制度設計本身就確保了這個優勢傳到你手上時已經打折。
+- **訊號模糊**：一筆大額交易/持倉背後動機看不到（贖回被迫調整/避險/再平衡 vs 真信念），容易誤判。
+- **倖存者偏誤**：只看得到現在還在檯面上、被追蹤的成功者；同一批人裡犯錯後消失的看不到。
+- **一旦流行就可能自我毀滅**：跟單者夠多時，被追蹤者的持倉曝光本身會製造可預期的買賣壓力，讓「聰明錢」有機會反向利用（crypto巨鯨已明確觀察到此現象；國會跟單ETF若規模夠大理論上也可能發生）。
+- **法律/政治風險（僅國會議員這支特有）**：美國國會正推動禁止議員持有個股、改強制信託的法案（ETHICS Act、TRUST in Congress Act），一旦通過，這個子類型的資料來源直接消失。
+
+**適合對象**：四個子類型不應一概而論——內部人非例行買進訊號證據相對最扎實但可操作空間薄；機構13F複製證據呈現正反兩派研究並存；國會議員跟單的媒體熱度與同儕審查文獻結論落差最大，headline報酬數字應視為行銷素材而非可信賴的研究結論；加密貨幣巨鯨追蹤證據最弱、風險最高。整體而言不建議把本策略當主要決策依據，至多作為輔助訊號、搭配其他角度交叉驗證。
+
+## 五、事件驅動／特殊情境投資策略（Event-Driven / Special Situations）
+
+### 18. 事件驅動／特殊情境投資
+
+核心邏輯：不賭總體方向或長期基本面，而是賭「特定公司事件」的結果。這是HFR（Hedge Fund Research）官方六大避險基金策略分類之一（equity hedge、**event-driven**、fund-of-funds、macro、relative value、risk parity），與本章前17種完全不重疊——不是選股風格，也不是動能/總體/市場中性套利，是獨立的「押注特定公司事件結果」邏輯。主要三個子類型：
+
+**(a) 併購套利（Merger Arbitrage / Risk Arbitrage）**：併購案宣布後，買進被收購方股票（現金收購）或同時放空收購方股票（股票交換型收購），賺取「最終交易價」與「市場現價之間因不確定性存在的殘餘價差」，賭交易能順利完成。Mitchell & Pulvino經典研究分析1963–1998年4,750件股票交換併購、現金併購與現金公開收購，發現風險套利年化異常報酬扣除交易成本前9.25%、扣除後仍有約4%超額報酬。**關鍵風險特性**：報酬與大盤報酬在「大盤重挫時」呈正相關、在盤整/上漲時則不相關——研究明確把這個報酬形態類比為「賣出未避險的大盤賣權（selling uncovered index put options）」，即平時穩定賺取價差，但系統性風險爆發時（如2008年融資市場凍結導致大量併購案破局）會與大盤同步重挫，且併購失敗風險本身在deal即將破局前價差會提前放大。來源：[Characteristics of Risk and Return in Risk Arbitrage (SSRN)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=268144)
+
+**(b) 不良債權投資（Distressed Debt）**：買進瀕臨/已進入破產的公司債券（通常僅面額一小部分的折價交易），賭重整完成後的清償/回收價值高於買進成本，本質是「用債券形式操作的價值投資」。1987–2016年整體30年期間，違約債券從違約到重整完成的年化平均報酬約11.08%，但**同一份研究也指出「整個樣本期間表現並不特別亮眼」，2006–2016區間表現明顯優於更早期**，顯示報酬高度依賴進場時機與危機後的重整效率；避險基金產業index數字方面，Event Driven Distressed Hedge Fund Index夏普比率約0.345。**須高度專業判斷力**：需要準確評估重整後的資產/清償價值，且須能分辨「市場定價錯誤」與「市場定價其實正確反映了更差的清償結果」，複雜度、波動度、風險都高於一般債券投資。來源：[The Anatomy of Distressed Debt Markets (Annual Reviews)](https://www.annualreviews.org/doi/10.1146/annurev-financial-110118-123019)、[Performance Characteristics of Hedge Fund Indices (SCIRP)](https://www.scirp.org/pdf/TEL_2019082918140281.pdf)
+
+**(c) 特殊情境／分割上市（Special Situations / Spin-offs）**：Joel Greenblatt在《你也可以成為股市天才》中系統化整理的手法之一——公司分割出子公司獨立上市後，母公司股東常因「非自願持有」（許多機構法人的投資政策不允許持有小型/非核心子公司股票）而不計成本立即賣出分割出來的子公司股票，造成初期定價明顯偏低、之後修正回歸合理價值，形成可辨識的錯價機會。一份彙整逾25篇分割研究的統合分析（meta-analysis）確認「分割與顯著的異常報酬有關」，效應來源包含公司聚焦度提升、資訊透明度改善、部分案例有稅務誘因；一份更新至2007–2017年、涵蓋249件自願分割案例的研究確認同等量級的異常報酬持續存在。Greenblatt本人以此類特殊情境操作Gotham Capital，1985年起創造年化約40%的報酬紀錄。**須誠實澄清報酬歸因的侷限**：分割案的異常報酬多集中在分割完成後第二年（機構被迫賣壓消化完畢、新管理層誘因機制生效之後），並非分割公告當下立即兌現，需要耐心持有；且「Greenblatt 40%年化」是他個人基金整體績效，並非分割策略單獨可歸因的報酬率，兩者不應混為一談。來源：[Stock performance in Spin-offs (DiVA)](https://www.diva-portal.org/smash/get/diva2:1127475/FULLTEXT01.pdf)、[Special Situations in Stocks: Insights from Greenblatt (Buyside Digest)](https://www.buysidedigest.com/insights/special-situations-in-stocks-insights-from-joel-greenblatts-you-can-be-a-stock-market-genius/)
+
+**三個子類型共通的結構性特性**：
+- **報酬來源是「事件不確定性溢酬」，不是市場貝他值**：三個子類型平時報酬與大盤相關性都偏低（吸引機構配置的原因之一），但這正是「尾部風險」的另一種說法——一旦系統性風險爆發（融資市場凍結、信用利差急速擴大），個別事件的失敗機率會同步全面上升，過去看似獨立不相關的部位會同時虧損，2008年金融海嘯期間即是如此。
+- **需要專業盡職調查能力**：併購套利要判斷監管過關機率、股東投票結果、融資是否到位；不良債權需要準確估算破產重整後的清償順位與資產價值；分割上市需要判斷子公司分割後的真實基本面，三者都不是單純看價格圖表能做的判斷，門檻遠高於本章前面多數策略。
+- **散戶可行性普遍偏低**：不良債權多數不良債券最低承作面額高、流動性差，散戶難以直接參與；併購套利需要即時監控法規進度與融券放空能力（股票交換型收購）；分割上市相對是三者中散戶可行性最高的一支（只需持有母公司股票、等分割完成後決定去留），但仍需要能承受初期非自願分割股被拋售的價格波動。
+- **與本章第9節利差交易的共通點**：報酬分布同樣呈現「平時穩定小賺、危機時集中虧損」的負偏態特性（Mitchell & Pulvino直接把併購套利報酬類比為賣出保險），讀者可對照第9節「picking up nickels in front of a steamroller」的風險比喻理解。
+
+**適合對象**：機構、避險基金、或有專業盡職調查能力（法務/信用分析/財報分析）與充足資金分散多筆事件部位的高淨值投資人；一般散戶較適合透過事件驅動避險基金/相關基金間接參與，不建議直接操作不良債權或大規模併購套利部位，分割上市則可作為「持有母公司股票、分割後再評估去留」的被動參與方式，門檻相對較低。
+
+## 六、可轉債套利／固定收益相對價值／波動率套利策略（Convertible Arbitrage / Fixed Income Relative Value / Volatility Arbitrage）
+
+### 19. 可轉債套利／固定收益相對價值／波動率套利
+
+核心邏輯：這是HFR六大避險基金分類中「相對價值（Relative Value）」大類底下，第12節「配對交易/統計套利」（純股票對股票）之外的另外三支具體工具——都是抓「兩個理論上應該連動、但暫時定價錯誤的相關證券」之間的價差，而非賭單一標的方向。**誠實提醒**：這是本章目前為止最偏機構/專業級的一支，證據也顯示這類策略容易在系統性風險爆發時集體虧損（詳見下方LTCM案例），讀者應以審慎態度看待。
+
+**(a) 可轉債套利（Convertible Arbitrage）**：買進可轉換公司債、同時放空對應股票對沖股權風險，賺可轉債隱含選擇權價值與股票之間的定價價差，典型是「正利差策略」（buy-and-hedge）——收到的利息與選擇權時間價值大於放空成本時才進場。**證據呈現正反交織**：一份研究顯示可轉債套利基金報酬有很大一部分可由「買進可轉債＋單純對沖股權風險」這個簡單策略解釋；但另一份研究更進一步指出，扣掉可轉債市場供需失衡（新發行量、買方結構）的影響後，「異常報酬證據幾乎消失」——換句話說，多數看似穩定的獲利可能只是市場結構性供需失衡的補償，不是真正的定價無效率套利。**2007–2008信用危機期間，個別基金與基金指數均出現顯著負報酬**，可轉債套利與信用風險、利率期限結構風險因子顯著相關，危機時這些因子同步惡化。來源：[Risk and Return in Convertible Arbitrage (ScienceDirect)](https://www.sciencedirect.com/science/article/abs/pii/S0927539810000861)、[Hedge Fund Returns: A Study of Convertible Arbitrage (NYU Stern)](https://www.stern.nyu.edu/sites/default/files/assets/documents/con_043324.pdf)
+
+**(b) 固定收益相對價值套利（Fixed Income Relative Value Arbitrage）**：抓公債、利率交換（swap）、期貨之間因到期日/發行時間不同產生的相對定價落差，常見手法包括殖利率曲線套利（同時買賣不同到期日公債）、交換利差套利（同時操作公債、附買回利率、利率交換三個部位賺取價差）。**因為單筆價差極小，這類策略必須動用高槓桿才有意義獲利**，這正是它與其他策略最本質的差異：不是報酬率低，是「必須加槓桿才能把報酬率放大到值得做」，槓桿同時放大了尾部風險。**LTCM（1998年崩盤，本書第5章回測驗證、第8章歷史教訓、本章第9節利差交易已多次引用的案例）主力操作的正是這套策略**：崩盤過程中LTCM單在交換利差部位就虧損約16億美元，疊加同時期進行的日圓利差交易虧損（見第9節），兩種相對價值/套利部位同時逆轉是LTCM崩盤的核心機制，不是單一策略出錯，而是多個「看似不相關」的相對價值部位在系統性流動性危機時同步失效。來源：[Risk and Return in Fixed-Income Arbitrage: Nickels in Front of a Steamroller? (UCLA Anderson)](https://www.anderson.ucla.edu/documents/areas/fac/finance/769.pdf)
+
+**(c) 波動率套利（Volatility Arbitrage）**：交易「市場隱含波動率」與「事後已實現波動率」之間的價差，比第13節選擇權收益策略更廣義（那節只講賣方的掩護性買權/現金擔保賣權）——波動率套利可以做多也可以做空波動率，常見手法包括離散度交易（dispersion trading：交易指數波動率 vs 成分股波動率的Markowitz變異數關係是否吻合）、變異數交換（variance swap）、VIX期貨與選擇權隱含波動率之間的無套利偏離。**報酬分布呈現與本章其他賣方策略相同的不對稱形態**：放空波動率策略「多數時候小賺、但偶爾出現顯著左尾巨虧」（負偏態），做多波動率策略則相反——「多數時候因時間價值耗損小賠、但波動率急升時可能有巨額報酬」。來源：[Dispersion trading: Empirical evidence from U.S. options markets (ScienceDirect)](https://www.sciencedirect.com/science/article/abs/pii/S1044028309000593)、[Volatility Trading Strategies (mbrenndoerfer.com)](https://mbrenndoerfer.com/writing/volatility-trading-arbitrage-strategies-delta-hedging-variance-swaps)
+
+**三個子類型共通的結構性特性**：
+- **價差極小，必須靠槓桿放大**：這是相對價值套利與本章其他策略最本質的差異——不是報酬率天生就低，是策略設計上就需要高槓桿才能把微小價差轉換成有意義的報酬，槓桿是策略的必要組成部分，不是可選的風險加碼。
+- **這是本書第四次出現「負偏態、危機時集中虧損」的報酬形態**：第9節利差交易、第13節選擇權收益策略、第18節(a)併購套利、以及這一節，四個策略的報酬分布都呈現「平時穩定小賺、系統性風險爆發時集中虧損」的共同形狀——這不是巧合，而是「賣出保險/賣出流動性」類策略的共通數學特性，讀者若同時配置多個這類策略，應注意它們的尾部風險高度相關，不能簡單假設互相分散。
+- **LTCM是本章唯一橫跨三個不同小節（第9節利差交易、第19節固定收益套利、以及本身的相對價值套利定位）的真實案例**，直接示範「單一基金同時持有多個表面上不相關、實際上尾部風險高度相關的相對價值部位」在流動性危機時如何同步崩潰，讀者應把這個案例當成本章風險管理教訓的核心參考，而非只在第9節讀過一次就略過。
+
+**適合對象**：純機構/專業避險基金層級，需要衍生性商品定價模型、高槓桿融資管道、即時風險監控系統；一般散戶完全不具備直接執行這三支策略的基礎設施，若想接觸波動率溢酬，較務實的路徑是回頭參考第13節選擇權收益策略（散戶可行性中等的版本），而非本節這三支需要機構級槓桿與模型的版本。
+
+## 七、台灣市場在地化對應
+
+以下是包含第17、18、19種在內的策略中，跟台灣市場有明確對應（或明確缺席）之處的第二輪在地化查證，比照本書第14/15/20章的既有寫法，來源以TWSE、TAIFEX、金管會、投信投顧公會、各大投信官網為主。
 
 ### 股息/收益投資（對應第5節）
 
@@ -211,7 +279,25 @@
 - 台灣**2026年才密集掛牌**主動式掩護性買權ETF（00400A主動國泰動能高息、00401A主動摩根台灣鑫收、00404A主動聯博動能50、00406A主動中信台灣收益），經理人主動持股+賣出買權/認購權證收權利金。**須誠實澄清**：這些是主動式ETF（Active ETF），依賴基金經理人主動判斷，不同於美股BXM那種被動追蹤固定規則指數的產品，制度上更接近美股JEPI一類主動管理型covered call基金；因2026年才新掛牌，**目前查無長期(BXM等級30年以上)實證績效數字**，屬新興、尚待長期驗證的產品類別。來源：[工商時報](https://www.ctee.com.tw/news/20260306700218-439901)
 - 台指選擇權(TXO)採三層保證金體系，比例結構為結算：維持：原始＝1：1.035：1.35；賣方無買方的權利金封頂虧損保護，理論虧損可能超過原始保證金。來源：[期交所保證金訂定](https://www.taifex.com.tw/cht/5/margingReqIndexOpt)
 
-## 五、十六種策略總表
+### 跟蹤持倉／複製交易（對應第17節）
+
+- **國會議員跟單（子類型b）在台灣無對應機制**：台灣沒有類似美國STOCK Act強制立法委員近即時揭露個股交易的法規，這個子類型在台灣市場完全不適用。
+- **公司內部人持股申報（子類型c）在台灣有對應機制，但頻率與即時性遠不如美股Form 4**：台灣內部人（董事、監察人、經理人、持股逾10%大股東）須於每月5日前向公司申報上月持股與設質情形，公司於每月15日前彙整申報進「公開資訊觀測站」——這是**每月一次的批次申報**，不像美股Form 4要求交易後短時間內申報單筆交易，時效性落差更大，理論上可操作的資訊優勢比美股更薄。本次查證**查無**針對台灣內部人持股申報預測力的學術研究（僅找到法規申報流程說明），與第4節GARP、第14節統計套利同樣列為誠實揭露的查證缺口，不代表台灣內部人訊號一定無效，只是目前查無嚴謹實證可引用。來源：[台灣證交所內部人股權異動法令](https://www.twse.com.tw/staticFiles/listed/manual/ff8080816aafdf4c016b53b3c70b03e4.pdf?ts=1560606703885)
+- **與既有「籌碼/資金流向」角度的關鍵區別，避免讀者混淆**：台灣「三大法人買賣超」（外資、投信、自營商）是本專案 `stock-research` workflow 既有的籌碼面角度，但那是追蹤**機構類別**的整體買賣方向，不是追蹤**特定具名個人或單一機構**的具體持倉（本節談的是後者）；兩者概念不同，不應把既有籌碼面角度誤解為已經在做「跟蹤持倉策略」。
+- 機構法人13F複製（子類型a）、加密貨幣巨鯨追蹤（子類型d）本質上是全球性資料（SEC申報、公開區塊鏈），不涉及台灣特定法規對應，故不另列在地化段落。
+
+### 事件驅動／特殊情境投資（對應第18節）
+
+- **分割上市（對應子類型c）台灣確實可行、已有成功案例，但公告當下的股價反應遠比美股溫和**：台灣分割手法最早可追溯至1958年台塑集團分割出南亞塑膠，近年案例包括2007年華碩電腦分割代工事業為和碩聯合。**須誠實澄清與美股的量級差異**：美股分割公告平均約有3%顯著正向異常報酬，而查證找到的一份分析1997–2016年138件台灣分割案例的研究顯示，資產出售型分割的公告效應顯著高於股權分割/資產分割，跨產業分割的公告效應比同產業分割高3.8–4.1個百分點（5%顯著水準），但**整體而言公告當下的異常報酬幅度低於美股、且部分樣本未達統計顯著**——這與本章「動能/順勢交易（對應第7節）」段落所述「台灣股市是動能異常著名例外」屬於同一類「美股既有異象在台灣訊號減弱」的現象，讀者不應直接把美股分割研究的報酬預期套用到台股。來源：[企業分割的價值創造與流失 (Airiti Library)](https://www.airitilibrary.com/Article/Detail/U0030-0705201811404058)
+- **併購套利（對應子類型a）台灣有實務案例，但缺乏系統性學術報酬統計**：台灣公開收購案例不少（如2015年日月光以溢價34%公開收購矽品精密約25%股權），機制與美股類似——收購方通常以宣布前股價加計溢價收購，股價會迅速上漲但不會完全等於收購價，殘餘價差反映交易不確定性。本次查證**查無**針對台灣併購套利年化報酬的學術實證研究（僅查得個案與機制說明），與第4節GARP同樣列為誠實揭露的查證缺口。來源：[風險套利/併購套利是什麼 (vocus)](https://vocus.cc/article/6783e231fd8978000140aa33)
+- **不良債權投資（對應子類型b）在台灣可行性極低**：台灣公司債違約後的重整/破產法制與美股Chapter 11破產保護制度不同，且台灣違約債券次級市場流動性遠不如美股，本次查證未找到台灣本土不良債權投資的成熟市場機制或學術研究，判斷此子類型在台灣散戶層級**幾乎不可行**，若要參與需透過國際不良債權基金間接投資美股/國際市場標的。
+
+### 可轉債套利／固定收益相對價值／波動率套利（對應第19節）
+
+- **可轉債套利（對應子類型a）台灣本土對應機制成熟度意外地高，是本章台灣在地化查證中證據最扎實的一項**：台灣早在2000年就從外商投資銀行引進「可轉換公司債資產交換（CBAS）」，證券商把可轉債拆解成固定收益端與選擇權端分售給不同需求的投資人，機制上與國際文獻描述的可轉債套利高度對應。**須誠實補充實務限制**：並非所有可轉債都能拆解CBAS，依TCRI信用風險指標分級，1–4分（信用風險較低）通常可拆解、5–6分有額度限制、7–9分（信用風險較高）則無法拆解——這代表台灣CBAS市場系統性排除了信用風險較高、理論上套利空間可能更大的標的，是台灣本土市場結構特有的限制。來源：[可轉換公司債資產交換(CBAS)簡介 (元富證券)](https://www.sinotrade.com.tw/Bond/Bond_2)、[CBAS 是什麼？3分鐘帶你瞭解 (知識獲利大聯盟)](https://chan-yi.com/cbas/)
+- **固定收益相對價值套利、波動率套利（對應子類型b、c）在台灣可行性極低**：這兩支子類型國際上都仰賴高流動性的利率交換、公債期貨、變異數交換等衍生性商品市場深度，台灣公債期貨與利率交換市場規模、深度遠不如美股/美債市場，本次查證未找到台灣本土針對這兩支子類型的成熟市場機制或學術研究，判斷在台灣散戶、甚至多數台灣本土機構層級都**不具備參與基礎**。
+
+## 八、十九種策略總表
 
 | 策略 | 時間軸 | 核心風險特性 | 實證強度 | 散戶可行性 |
 |---|---|---|---|---|
@@ -231,15 +317,21 @@
 | 系統化/量化交易 | 不定 | 過擬合、樣本外失效 | 依方法而異 | 低（建議間接參與） |
 | 市場中性策略 | 不定 | 軋空、保證金追繳 | 中 | 低（放空成本高） |
 | 算法交易/HFT | 極短(毫秒級) | 無法參與、僅供理解 | 不適用 | 不可行 |
+| 跟蹤持倉/複製交易 | 依申報週期(月/季) | 揭露延遲、訊號模糊、倖存者偏誤 | 四子類型差異極大，內部人非例行買進最強，國會議員跟單媒體宣稱與學界結論衝突最明顯 | 中（13F/內部人跟單門檻低）～低（國會跟單資料源有政治風險，加密巨鯨追蹤風險最高） |
+| 事件驅動/特殊情境投資 | 依個案事件週期(數月) | 危機時系統性同步虧損（負偏態） | 三子類型皆有實證但強度不一，併購套利扣成本後約4%超額報酬最扎實 | 低（不良債權/大型併購套利需機構管道）～中（分割上市散戶門檻最低） |
+| 可轉債套利/固定收益相對價值/波動率套利 | 不定，須高槓桿 | 負偏態、槓桿放大尾部風險（LTCM案例） | 中偏弱（可轉債套利調整供需失衡後異常報酬幾乎消失） | 極低（純機構/專業避險基金層級，散戶完全不具備執行基礎設施） |
 
-## 六、與本專案既有內容的關聯
+## 九、與本專案既有內容的關聯
 
 - **第四章（基本面分析）**提供估值工具箱（DCF、P/E、P/B等），這一章展示不同「流派」如何用不同方式運用/組合這些工具。
-- **第九章（經典書籍架構）**的四位作者立場對應本章不同策略：Malkiel的效率市場假說是對本章所有主動策略的隱性質疑；Graham的安全邊際即價值投資的思想源頭；Livermore的順勢而為、阻力最小路徑是動能/順勢交易的心理根源；Schwager訪談歸納的「嚴格風控紀律」則適用於本章全部16種策略，不分流派。
+- **第九章（經典書籍架構）**的四位作者立場對應本章不同策略：Malkiel的效率市場假說是對本章所有主動策略的隱性質疑；Graham的安全邊際即價值投資的思想源頭；Livermore的順勢而為、阻力最小路徑是動能/順勢交易的心理根源；Schwager訪談歸納的「嚴格風控紀律」則適用於本章全部19種策略，不分流派。
 - **第一章（風險管理與部位大小）**的部位規模、停損原則適用於任何一種策略——策略決定「往哪個方向下注」，第一章決定「下多大注、什麼時候認錯」，兩者缺一不可。
 - **第七章（資產類別特性）**：利差交易與全球總體策略天生跨資產類別，操作前應回頭參考該章的資產特性差異。
 - **`research/methodology.md`** 的四個戰術分析角度（總體/政策面、技術面/價位、新聞/催化事件、籌碼/資金流向）**不等於本章任何單一策略**，而是偏向「不特定押注單一流派、要求多角度互相印證才進場」的**保守判讀方法論**，精神上更接近Graham的審慎與Schwager的風控紀律，刻意避免動能/順勢交易那種「訊號出現就進場」的機械化觸發。這一點在 `.claude/workflows/stock-research.js` 的 Synthesize 階段體現得最清楚：2026-08-14新增了「動能策略觀點（順勢／動能型，對照用）」小節，與原本的「進場策略框架（保守／結構確認型）」並列——前者對應本章第7節動能投資「趨勢延續」的廣義邏輯（精確地說是時間序列動能而非12–1橫斷面排名法，見第7節說明），後者對應本書整體的保守方法論，兩者刻意分開寫、不混為一談，讓讀者自行選擇適合自己風險偏好的框架。
 - **`research/jpy-futures.md`**：第9節利差交易的機制解釋（BOJ升息+美國就業數據如何觸發carry unwind），為該研究筆記持續追蹤的「總體/政策面」角度提供了機制層次的背景知識。
+- **第17節（跟蹤持倉／複製交易）刻意不落地進 `stock-research.js` workflow**：理由與2026-08-14排除全球總體策略、選擇權收益策略相同——場景不合。`stock-research` workflow 研究的是「單一標的」，第17節四個子類型全部需要追蹤「特定申報人/機構/錢包」而非分析單一標的本身的總體/技術/新聞/籌碼面，且證據品質參差（尤其國會議員跟單這支媒體熱度與學術結論落差極大），若強行塞進workflow的四角度框架反而會製造誤導性的虛假精確度。與既有籌碼面角度（三大法人買賣超）的區別已在第七節台灣在地化段落說明，不再重複。
+- **第18節（事件驅動／特殊情境投資）同樣刻意不落地進 `stock-research.js` workflow**：`stock-research` workflow 研究的是「單一標的的當下四角度判讀」，而事件驅動策略的前提是「存在一個具體、已公告的公司事件」（併購案、破產重整、分割上市）——沒有這個前提，這套策略邏輯完全無法套用；且需要的盡職調查（監管過關機率、清償順位分析、融資到位與否）已超出workflow既有四角度的資料蒐集範疇，屬於個案專案研究，不是可規則化嵌入既有workflow的通用步驟。若使用者未來研究的標的本身正處於併購/分割/重整事件中，應視為獨立的個案研究需求另行處理，而非修改workflow本身。
+- **第19節（可轉債套利／固定收益相對價值／波動率套利）同樣刻意不落地進 `stock-research.js` workflow，且是本章三次workflow排除決定中理由最直接的一次**：這三支子類型需要衍生性商品定價模型、高槓桿融資管道與即時風險監控系統，屬於純機構/專業避險基金層級的執行門檻，與`stock-research` workflow「協助個人研究單一標的進出場判斷」的定位完全不在同一個量級，不存在「以後視需求補上」的空間——不是場景不合，是散戶執行能力本質上不具備，與第17、18節「場景不合但技術上仍可能有應用空間」的排除理由不同。
 
 ## 查證侷限誠實揭露（彙整，2026-08-14第二輪更新）
 
@@ -255,6 +347,21 @@
 **第一輪已標註、第二輪查證後仍未解決**：
 - GARP作為獨立學術因子缺乏嚴謹同儕審查數據，第二輪找到一篇無法核實真偽的候選台股研究，仍標註為業界觀察而非統計顯著實證（第4節）。
 
+**2026-08-16新增第17節的查證侷限（單輪查證，未經第二輪覆核與獨立審稿）**：
+- 國會議員跟單子類型存在媒體宣稱（Pelosi十年816%報酬、87%勝率）與同儕審查文獻（"Capitol Losses"、NBER "Capital in the Capitol"）結論方向相反的明顯衝突，本章採信同儕審查文獻但誠實並列兩方數字，未進一步查證媒體數字的原始出處是否存在方法論瑕疵（如未扣除該議員配偶的選擇權部位、未做風險調整）。
+- 台灣內部人持股申報預測力查無學術研究，僅查得申報法規流程，見第七節台灣在地化段落。
+- 13F複製「年化贏標普500 24.3%」與國會跟單「30%報酬」等headline數字明顯有資料探勘/事後篩選嫌疑，本章已判斷不採信、不作為結論依據，但未逐一取得原始論文/文章方法論細節逐項拆解證偽，僅依方法論常識（挑選事後表現最好的子集回測）判斷。
+
+**2026-08-16新增第18節的查證侷限（單輪查證，未經第二輪覆核與獨立審稿）**：
+- 不良債權「1987–2016年年化約11.08%」數字與「整體樣本期間表現不特別亮眼、2006–2016區間較佳」的定性描述來自同一組WebSearch摘要結果，未直接下載Annual Reviews原文論文逐字核對兩個數字是否確實出自同一份研究、口徑是否一致（例如11.08%是否已扣除違約前的資本損失），與第9節BIS Bulletin 90「已下載原文逐字核對」的查證強度不同，讀者引用時應留意。
+- 台灣分割上市「138件案例、1997–2016」研究的具體論文出處未能精確定位到單一可直接連結的來源（WebSearch摘要指向多篇候選文獻），本章引用時使用了較籠統的Airiti Library條列頁面而非直接論文全文連結，屬於溯源強度較弱的引用，與本章第一輪其餘章節「附精確論文PDF連結」的標準不完全一致。
+- 台灣併購套利、不良債權投資的學術實證查詢均查無結果（見第七節台灣在地化段落），僅能以個案報導佐證機制存在，不代表策略在台灣完全不可行，只是目前查無嚴謹量化研究可引用。
+
+**2026-08-16新增第19節的查證侷限（單輪查證，未經第二輪覆核與獨立審稿）**：
+- LTCM「交換利差部位虧損約16億美元」與第9節既有「日圓交易損失2–3億美元」是兩筆不同部位的個別數字，本章判斷兩者描述的是LTCM崩盤過程中不同交易類別的損失、並非互相矛盾，但**未找到一份彙整LTCM各類部位總損失（含股票波動率套利、新興市場債等其他已知部位）的單一權威來源逐項核對加總是否合理**，讀者若要精確引用LTCM總損失數字，建議另行查證。
+- 可轉債套利「調整供需失衡後異常報酬幾乎消失」與「2007–2008出現顯著負報酬」兩個發現來自不同研究，本章判斷兩者方向一致、可並陳，但未查證這兩份研究是否使用相同的基金樣本/資料期間，存在方法論不完全可比的風險。
+- 波動率套利子類型的說明以「離散度交易」「變異數交換」「VIX期貨無套利偏離」三個常見手法舉例，但未找到針對這三者整體、長期（10年以上）的彙總報酬統計，僅有個別機制研究，與第13節BXM夏普比率有明確30年官方數字可引用的查證強度不同。
+
 **第二輪新發現的查證侷限**：
 - 台灣0056（元大高股息）ETF規模，WebSearch摘要與MoneyDJ官網直接查詢出現「約5,800億元」vs「755.42億元」兩個相差近8倍的矛盾數字，本章未採用任一數字，建議寫作時直接查投信官網當日淨值表確認（第四節）。
 - 台灣「平盤下不得放空」規則的2024–2026最新官方條文因WebFetch遭TWSE官網403拒絕，僅能引用財經教育網站轉述，建議另行核實現行版本（第四節）。
@@ -268,4 +375,10 @@
 
 **市場中性/量化/選擇權收益**：[Gatev配對交易](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=141615)、[Do & Faff報酬衰退](https://rpc.cfainstitute.org/research/financial-analysts-journal/2010/does-simple-pairs-trading-still-work)、[Zhu 2024配對交易更新](https://economics.yale.edu/sites/default/files/2024-05/Zhu_Pairs_Trading.pdf)、[CBOE BXM Factsheet](https://cdn.cboe.com/resources/indices/factsheet/CboeGlobalIndices_BXM-Index.pdf)、[AQR Covered Calls分解](https://images.aqr.com/-/media/AQR/Documents/Insights/Journal-Article/Covered-Calls-Uncovered.pdf)、[The Wheel策略](https://www.schwab.com/learn/story/three-things-to-know-about-wheel-strategy)、[Rasekhschaffe & Jones機器學習選股](https://www.globalgradient.es/wp-content/uploads/2026/01/ML-for-stock-selection-Financial-Analyst-Journal.pdf)、[主動基金長期表現](https://www.morningstar.com/funds/measuring-performance-active-funds-against-their-passive-peers)、[市場中性策略介紹](https://www.caisgroup.com/articles/an-introduction-to-long-short-equity-strategies)、[軋空機制](https://www.heygotrade.com/en/blog/short-squeeze-explained/)、[HFT對流動性的雙面影響](https://www.gc.cuny.edu/sites/default/files/2022-01/HFT_Liquidity_2.pdf)
 
-**台灣在地化**：[高股息ETF規模](https://udn.com/news/story/123006/9609550)、[收益平準金新制](https://www.fsc.gov.tw/ch/home.jsp?id=2&parentpath=0&mcustomize=news_view.jsp&dataserno=202508130001&dtable=News)、[00713殖利率陷阱案例](https://udn.com/news/story/123006/9585788)、[台股動能效應失效](https://nccubr.nccu.edu.tw/articles/30)、[台股動能修正性研究](https://www.sciencedirect.com/science/article/abs/pii/S0927538X23000094)、[00905 Smart Beta ETF](https://www.stockfeel.com.tw/ft%E8%87%BA%E7%81%A3smart-etf-00905/)、[平盤下不得放空規則](https://www.cna.com.tw/news/firstnews/202003195012.aspx)、[TWSE借券資訊](https://www.twse.com.tw/zh/products/sbl/disclosures/info.html)、[台灣主動式Covered Call ETF](https://www.ctee.com.tw/news/20260306700218-439901)、[TXO保證金訂定](https://www.taifex.com.tw/cht/5/margingReqIndexOpt)
+**台灣在地化**：[高股息ETF規模](https://udn.com/news/story/123006/9609550)、[收益平準金新制](https://www.fsc.gov.tw/ch/home.jsp?id=2&parentpath=0&mcustomize=news_view.jsp&dataserno=202508130001&dtable=News)、[00713殖利率陷阱案例](https://udn.com/news/story/123006/9585788)、[台股動能效應失效](https://nccubr.nccu.edu.tw/articles/30)、[台股動能修正性研究](https://www.sciencedirect.com/science/article/abs/pii/S0927538X23000094)、[00905 Smart Beta ETF](https://www.stockfeel.com.tw/ft%E8%87%BA%E7%81%A3smart-etf-00905/)、[平盤下不得放空規則](https://www.cna.com.tw/news/firstnews/202003195012.aspx)、[TWSE借券資訊](https://www.twse.com.tw/zh/products/sbl/disclosures/info.html)、[台灣主動式Covered Call ETF](https://www.ctee.com.tw/news/20260306700218-439901)、[TXO保證金訂定](https://www.taifex.com.tw/cht/5/margingReqIndexOpt)、[台灣內部人股權異動法令](https://www.twse.com.tw/staticFiles/listed/manual/ff8080816aafdf4c016b53b3c70b03e4.pdf?ts=1560606703885)
+
+**跟蹤持倉／複製交易（第17節，2026-08-16新增）**：[Alpha Cloning - Quantpedia](https://quantpedia.com/strategies/alpha-cloning-following-13f-fillings)、[Outperforming the Market: Portfolio Cloning from 13F (SSRN)](https://papers.ssrn.com/sol3/Delivery.cfm/5399672.pdf?abstractid=5399672&mirid=1)、[Do senators and house members beat the market? (ScienceDirect)](https://www.sciencedirect.com/science/article/abs/pii/S0047272722000044)、[Capital in the Capitol (NBER)](https://www.nber.org/papers/w35041)、[NANC/KRUZ研究 (ScienceDirect)](https://www.sciencedirect.com/science/article/abs/pii/S0165176525001004)、["Capitol Losses" 議題背景 (GovFacts)](https://govfacts.org/accountability-ethics/ethics-conflicts-of-interest/stock-trading-by-officials/congressional-stock-trading-the-law-the-conflicts-and-the-push-for-a-ban/)、[Insider filings as trading signals (ScienceDirect)](https://www.sciencedirect.com/science/article/pii/S1544612324015435)、[Can You Profit by Following Corporate Insiders? (Larry Swedroe)](https://larryswedroe.substack.com/p/can-you-profit-by-following-corporate)、[Whale Copy-Trading (Bitsgap)](https://bitsgap.com/blog/why-copying-on-chain-whale-trades-usually-backfires)、[Follow the Whales (FinanceFeeds)](https://financefeeds.com/follow-the-whales-smart-strategy-or-risky-move/)
+
+**事件驅動／特殊情境投資（第18節，2026-08-16新增）**：[HFR Hedge Fund Strategy Classification](https://www.hfr.com/hfr-indices/hfr-hedge-fund-strategy-classifications/)、[Characteristics of Risk and Return in Risk Arbitrage (SSRN)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=268144)、[The Anatomy of Distressed Debt Markets (Annual Reviews)](https://www.annualreviews.org/doi/10.1146/annurev-financial-110118-123019)、[Performance Characteristics of Hedge Fund Indices (SCIRP)](https://www.scirp.org/pdf/TEL_2019082918140281.pdf)、[Stock performance in Spin-offs (DiVA)](https://www.diva-portal.org/smash/get/diva2:1127475/FULLTEXT01.pdf)、[Special Situations in Stocks: Greenblatt (Buyside Digest)](https://www.buysidedigest.com/insights/special-situations-in-stocks-insights-from-joel-greenblatts-you-can-be-a-stock-market-genius/)、[企業分割的價值創造與流失 (Airiti Library)](https://www.airitilibrary.com/Article/Detail/U0030-0705201811404058)、[風險套利/併購套利是什麼 (vocus)](https://vocus.cc/article/6783e231fd8978000140aa33)
+
+**可轉債套利／固定收益相對價值／波動率套利（第19節，2026-08-16新增）**：[Risk and Return in Convertible Arbitrage (ScienceDirect)](https://www.sciencedirect.com/science/article/abs/pii/S0927539810000861)、[Hedge Fund Returns: A Study of Convertible Arbitrage (NYU Stern)](https://www.stern.nyu.edu/sites/default/files/assets/documents/con_043324.pdf)、[Risk and Return in Fixed-Income Arbitrage: Nickels in Front of a Steamroller? (UCLA Anderson)](https://www.anderson.ucla.edu/documents/areas/fac/finance/769.pdf)、[Dispersion trading: Empirical evidence from U.S. options markets (ScienceDirect)](https://www.sciencedirect.com/science/article/abs/pii/S1044028309000593)、[Volatility Trading Strategies (mbrenndoerfer.com)](https://mbrenndoerfer.com/writing/volatility-trading-arbitrage-strategies-delta-hedging-variance-swaps)、[HFR Relative Value Classification](https://www.hfr.com/hfr-indices/hfr-hedge-fund-strategy-classifications/)、[可轉換公司債資產交換(CBAS)簡介 (元富證券)](https://www.sinotrade.com.tw/Bond/Bond_2)、[CBAS 是什麼 (知識獲利大聯盟)](https://chan-yi.com/cbas/)
