@@ -114,11 +114,18 @@ const gatheredRaw = await parallel(angles.map(a => () =>
 const gatherResults = gatheredRaw.filter(Boolean)
 
 phase('DeepResearch')
+const priceAnchor = gatherResults
+  .flatMap(g => g.key_price_levels || [])
+  .slice(0, 6)
+  .join('；')
 const deepResearchRaw = await agent(
   `請對投資標的「${target}」執行深度研究（deep research）。研究基準日期：${runDate}。\n\n` +
   `作法：使用 Bash 工具呼叫 Antigravity CLI（指令是 agy），指令格式類似：\n` +
   `timeout 280 agy -p "<針對這個標的的總體面、價位、催化事件、進場時機的研究提示>" --output-format text --effort high\n\n` +
-  `如果指令逾時、卡住、或出現要求登入（sign in）的錯誤訊息，代表 agy 目前無法使用，請直接回報 agy_available=false，並在 summary 說明「agy 未登入或逾時，本次跳過，請使用者執行 \`agy\` 完成登入」，不要重試、不要編造內容。\n` +
+  `如果指令逾時、卡住、或出現要求登入（sign in）的錯誤訊息，代表 agy 目前無法使用，請直接回報 agy_available=false，並在 summary 說明「agy 未登入或逾時，本次跳過，請使用者執行 \`agy\` 完成登入」，不要重試、不要編造內容。\n\n` +
+  `已知參考量級（來自本次已完成的 WebSearch 蒐集，僅供你事後檢查 agy 回傳數字的量級是否合理，不要直接把這些數字塞進你給 agy 的 prompt 裡、也不要暗示或誘導 agy 照抄這些值——目的是自我核對，不是提示答案）：${priceAnchor || '（無）'}\n` +
+  `取得 agy 的回應後，請自行比對：如果 agy 給出的指數/價位/口數等數字，跟上面這個參考量級差距達到整數倍（例如相差約2倍、腰斬、翻倍），這通常代表 agy 抓到了過期或錯置的舊資料快照，而不是單純誤差，請在 summary 中明確註記「疑似整批套用舊資料快照，量級與已知參考值不符」，仍然把 agy 原始數字放進 key_facts（供後續 Verify 階段留存比對），但不要在 summary 中把這些數字當成可信結論帶出。\n\n` +
+  `把 agy 回應整理成 key_facts 時，每一項都要求 agy 原始回應裡有附上具體來源網址與資料時間點才收錄；如果 agy 給的數字沒有附來源網址（純粹憑內部知識回答、沒有查證痕跡），這項就不要放進 key_facts，可以在 summary 中提及「agy 未附來源的說法：...」但標註為低可信度。\n` +
   `如果成功取得結果，把裡面具體的事實/數字整理成 key_facts，並在 summary 做整體摘要，設 agy_available=true。`,
   { label: 'agy-deep-research', phase: 'DeepResearch', schema: DEEPRESEARCH_SCHEMA }
 )
